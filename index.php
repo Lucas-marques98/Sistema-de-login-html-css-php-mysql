@@ -27,27 +27,6 @@ $u = new Usuario;
     </form>
     
 
-    <div class="rodape">
-      <footer>
-        <p>Site criado por:<a href="https://www.github.com/Lucas-marques98" target="_blank">Lucas Marques</p>
-      </footer>
-    </div>
-
-    <?php
-
-    if (isset($_POST['email'])) {
-      $email = addslashes($_POST['email']);
-      $senha = addslashes($_POST['senha']);
-
-      //verificar se não está vazio
-
-      if (!empty($email) && !empty($senha)) {
-        $u->conectar("projeto_login", "localhost", "root", "");
-        if ($u->msgErro == "") {
-          if ($u->logar($email, $senha)) {
-            header("location: areaPrivada.php")
-    ?>
-
           <?php
             } else {
           ?>
